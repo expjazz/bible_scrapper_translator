@@ -1,0 +1,27 @@
+asks user for a book
+
+return all chapters from the book (only titles)
+
+asks user for what chapter he wants
+
+asks if he wants the detailed notes or full transcript
+
+return the translation of what he wants
+
+classes
+
+USER
+  interactor - to ask user for what he wants
+  @chapter
+  @transcript or detailed note
+
+Scrapper
+  @scrap all chapters
+  @scrap all detailed notes
+
+Bible_page_finder
+  @make the math of what book it is to find in the 137 + (chapter)
+  
+  
+  
+
