@@ -12,7 +12,7 @@ class Scrapper
   def list_chapter
     # unparsed_page = HTTParty.get('https://www.calvaryabq.org/teachings_search.asp?series=139')
     # parsed_page = Nokogiri::HTML(unparsed_page)
-    num = 1
+    num = 737
     while num < 3000
       list = @parsed_page.css('#row' + num.to_s).css('a')
       if list[0] != nil
@@ -33,15 +33,16 @@ class Scrapper
   def find_transcript(link)
     unparsed_page = HTTParty.get('https://www.calvaryabq.org/' + link)
     parsed_page = Nokogiri::HTML(unparsed_page)
-    return parsed_page.css('#transcription').text
+    p parsed_page.css('#detailednotes').text
+    return parsed_page.css('#detailednotes').text
   end
 end
-scrapy = Scrapper.new(137)
+# scrapy = Scrapper.new(137)
 
-p scrapy.list_chapter
+# p scrapy.list_chapter
 
-p scrapy.find_link_from_chapter('Genesis 1:24-2:25')
-p scrapy.find_transcript("teachings_view.asp?ServiceID=739")
+# p scrapy.find_link_from_chapter('Genesis 1:24-2:25')
+# p scrapy.find_transcript("teachings_view.asp?ServiceID=739")
 
 =begin
 Code to find element by text
